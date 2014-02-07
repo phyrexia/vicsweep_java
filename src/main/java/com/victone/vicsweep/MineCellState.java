@@ -1,5 +1,5 @@
 package com.victone.vicsweep;
 
 public enum MineCellState {
-    EMPTY, FLAGGED, QUESTION
+    EMPTY, FLAGGED, QUESTION, CLICKED
 }
