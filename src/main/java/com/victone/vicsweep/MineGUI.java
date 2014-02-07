@@ -8,7 +8,7 @@ import java.util.Map;
 
 /*todo:
 	icons & sounds
-	//shouldn't be able to right click a clicked cell...
+	right click a clicked cell...
  */
 
 public class MineGUI extends JFrame implements ActionListener, MouseListener {
@@ -247,7 +247,6 @@ public class MineGUI extends JFrame implements ActionListener, MouseListener {
                 timer.start();
             }
             JButton someButton = (JButton) arg0.getSource();
-            someButton.setEnabled(false); //insufficient!
             MineCell someCell = button_cellMap.get(someButton);
             if (!someCell.hasBeenClicked())
                 if (gameBoard.leftClick(someCell.getX(), someCell.getY())) { // clicks the cell.
