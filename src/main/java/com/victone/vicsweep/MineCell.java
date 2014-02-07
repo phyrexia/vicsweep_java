@@ -8,11 +8,11 @@ public class MineCell {
     //we are reading png files as an array of ints
     //private static final int MAXICONSIZE = 4096;
 
-    // the state of this cell
     private MineCellState state;
 
     private JButton myButton;
-    //private ImageIcon mineFlag, questionMark;//, smiley;
+    //private ImageIcon mineFlag, questionMark;
+    //, smiley;
 
     // presence of a mine; whether cell's been actuated
     private boolean mine, clicked;
@@ -32,12 +32,7 @@ public class MineCell {
         //center
         myButton.setMargin(new Insets(0, -30, 0, -30));
 
-//		myButton.setContentAreaFilled(true);
-//		myButton.setOpaque(true);
-
-//		loadIcons();
-
-//		take this out unless you want the game to be really easy
+//		easy mode
 //		if (mine) {
 //		myButton.setToolTipText("BOMB");
 //      }
@@ -60,30 +55,15 @@ public class MineCell {
     }
 
     public void setState(MineCellState someState) {
-        // change state of this cell to someState
         // corresponds to a right click in the GUI
-        switch (someState) {
-            case EMPTY:
-                state = MineCellState.EMPTY;
-                // myButton.setIcon(null);
-                break;
-            case FLAGGED:
-                state = MineCellState.FLAGGED;
-                //myButton.setIcon(mineFlag);
-                break;
-            case QUESTION:
-                state = MineCellState.QUESTION;
-                // myButton.setIcon(questionMark);
-                break;
-        }
+        state = someState;
     }
 
     public void click() {
         clicked = true;
-        myButton.setEnabled(false);
     }
 
-    public boolean hasBeenClicked() { // not used yet, neet to integrate
+    public boolean hasBeenClicked() { // not used yet, need to integrate
         return clicked;
     }
 
