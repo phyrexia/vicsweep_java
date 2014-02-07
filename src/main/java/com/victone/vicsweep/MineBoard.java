@@ -68,22 +68,22 @@ public class MineBoard {
 
         // randomization routine
         // this fills a collection with Integers between 0 and (numMines)
-        // then it increments 'counter' as it creates MineCells.
-        // if current value of 'counter' is a member of the the list,
+        // then it increments 'mineCounter' as it creates MineCells.
+        // if current value of 'mineCounter' is a member of the the list,
         // this particular cell has been chosen to house a mine.
         // tastes great, less filling.
         Random r = new Random();
         Collection<Integer> mineList = new HashSet<>(numMines);
         while (mineList.size() < numMines)
             mineList.add(r.nextInt(height * width));
-        int counter = 0;
+        int mineCounter = 0;
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                if (mineList.contains(counter))
+                if (mineList.contains(mineCounter))
                     mineArray[i][j] = new MineCell(j, i, true);
                 else
                     mineArray[i][j] = new MineCell(j, i, false);
-                counter++;
+                mineCounter++;
             }
         }
     }
